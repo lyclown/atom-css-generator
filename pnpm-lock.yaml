@@ -4,6 +4,9 @@ dependencies:
   '@vue/compiler-sfc':
     specifier: ^3.3.4
     version: 3.3.4
+  atom-css-generator:
+    specifier: ^1.0.0
+    version: 1.0.0
 
 packages:
 
@@ -88,6 +91,12 @@ packages:
 
   /@vue/shared@3.3.4:
     resolution: {integrity: sha512-7OjdcV8vQ74eiz1TZLzZP4JwqM5fA94K6yntPS5Z25r9HDuGNzaGdgvwKYq6S+MxwF0TFRwe50fIR/MYnakdkQ==}
+    dev: false
+
+  /atom-css-generator@1.0.0:
+    resolution: {integrity: sha512-qTJblmih595OjoQ9acS7pwXqkh2FRcbEfDh4oQvdezIwy0FdeDKpecHKpeTNXE85WxsKL5Dy1GuNkcUOLOjxiQ==}
+    dependencies:
+      '@vue/compiler-sfc': 3.3.4
     dev: false
 
   /estree-walker@2.0.2:
