@@ -4,20 +4,20 @@
 
 ## 安装
 
-使用npm或yarn进行安装:
+使用npm或yarn或pnpm进行安装:
 
 ```bash
-npm i atom-css-generator
+npm i vite-plugin-atom-css-generator
+yarn add vite-plugin-atom-css-generator
+pnpm add vite-plugin-atom-css-generator
 ```
-
- 然后将vite-plugin-atom-css-generator.js文件放入项目的根目录或适当的子目录中。
 
 ## 使用方法
 
 1. 在你的vite.config.js中引入并使用此插件：
 
 ```
-import atomCssGenerator from './path_to_plugin/vite-plugin-atom-css-generator';
+import atomCssGenerator from 'vite-plugin-atom-css-generator';
 
 export default {
   plugins: [
@@ -27,7 +27,14 @@ export default {
 }
 ```
 
-2. 在Vue组件的模板中使用特定格式的类名，例如：fc-fff。在构建时，插件将自动生成如下的CSS：
+
+#### ⚠️ 必须放在@vitejs/plugin-vue插件的前面
+
+```
+plugins:[atomCssGenerator(),vue()]
+```
+
+3. 在Vue组件的模板中使用特定格式的类名，例如：fc-fff。在构建时，插件将自动生成如下的CSS：
 
 ```
 .fc-fff { color: #fff; }
@@ -86,7 +93,9 @@ atomCssGenerator({ outputPath: 'assets/styles' })
 | 类名                | 样式描述 | 示例                                              |
 | ------------------- | -------- | ------------------------------------------------- |
 | `w-{size}`        | 宽度     | `.w-100 { width: 100px; }`                      |
+| w-{size}p           | 宽度%    | `.w-50p { width: 50%; }`                        |
 | `h-{size}`        | 高度     | `.h-200 { height: 200px; }`                     |
+| h-{size}p           | 高度%    | `.h-50p {height`: 50%; }                        |
 | `fs-{size}`       | 字体大小 | `.fs-14 { font-size: 14px; }`                   |
 | `fw-{weight}`     | 字体粗细 | `.fw-bold { font-weight: bold; }`               |
 | `fs-{style}`      | 字体样式 | `.fs-italic { font-style: italic; }`            |
@@ -153,4 +162,4 @@ atomCssGenerator({ outputPath: 'assets/styles' })
 
 ### 为什么我的style.css没有被注入？
 
-确保outputPath的配置正确，并且HTML中存在`</head>`标签，因为插件是将`<link>`标签插入到此位置的。
+确保outputPath的配置正确，并且HTML中存在 `</head>`标签，因为插件是将 `<link>`标签插入到此位置的。

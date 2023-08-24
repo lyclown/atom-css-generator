@@ -1,20 +1,37 @@
 {
-  "name": "atom-css-generator",
-  "version": "1.0.0",
-  "description": "",
+  "name": "vite-plugin-atom-css-generator",
+  "version": "1.0.1",
+  "description": "A Vite plugin to auto generate atomic CSS from class names in Vue Single File Components.",
   "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/lyclown/atom-css-generator"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "vite",
+    "plugin",
+    "atom-css",
+    "atomic-css",
+    "auto-generate"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lyclown/atom-css-generator/issues"
+  },
+  "homepage": "https://github.com/lyclown/atom-css-generator#readme",
+  "files": [
+    "lib",
+    "LICENSE",
+    "README.md"
+  ],
+  "peerDependencies": {
+    "vite": "^3.0.0"
+  },
   "dependencies": {
-    "@vue/compiler-sfc": "^3.3.4",
-    "atom-css-generator": "^1.0.0"
+    "@vue/compiler-sfc": "^3.3.4"
   }
 }
